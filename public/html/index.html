@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+<!-- 	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
+	<script src="js/index.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="stylesheets/css/main.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+	<!-- Angular Material requires Angular.js Libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>	
+	<script type="text/javascript" src="js/controller.js"></script>
+
+</head>
+<body ng-app="SiteApp" ng-controller="SiteCtrl" id="siteBody">
+
+<!-- 			<div class="section-box projects" id="projects-box">
+				<div class="projects-list-box">
+					<div class="project-box" ng-repeat="proj in projects" ng-click="showProj($event, $index)" ng-class="{header:$first}">
+						<div class="proj-img" ng-style="{'background-image': 'url(' + proj.imgs[0].path + ')'}"></div>
+					</div>
+				</div>
+			</div> -->
+
+	<div id="header-bar">
+		<div id="nav-box">
+			<div class="nav-item about">About</div>
+			<div class="nav-item contact">Contact</div>
+		</div>			
+	</div>
+
+	<div id="content-box">
+		<div id="hello-img"></div>	
+		<div id="hello-text">Hi, I'm Jack Ding</div>
+
+		<div id="projs-box">
+
+			<div id="test"></div>
+			<div class="proj-header-box">
+				<div class="proj-img-box" ng-if="projects[0].vids===undefined">
+					<img class="proj-img" ng-src="{{projects[0].imgs[0].path}}">
+				</div>				
+				<video loop autoplay class="proj-vid" ng-if="projects[0].vids!==undefined"> 
+					<source ng-src="{{projects[0].vids[0].path}}">
+				</video>	
+<!-- 				<div class="proj-title">{{projects[0].name}}</div>				
+ -->			</div>
+
+			<div class="grid">
+
+				<div class="grid-item darwin">
+					<div class="scrim"></div>
+					<div class="proj-img-box" ng-if="projects[1].vids===undefined">
+						<img class="proj-img" ng-src="{{projects[1].imgs[0].path}}">
+					</div>				
+					<video loop autoplay class="proj-vid" ng-if="projects[1].vids!==undefined"> 
+						<source ng-src="{{projects[1].vids[0].path}}">
+					</video>	
+<!-- 					<div class="proj-title">{{projects[1].name}}</div>						
+ -->				</div>
+
+				<div class="grid-item personal">
+					<div class="scrim"></div>
+					<div class="proj-img-box" ng-if="projects[2].vids===undefined">
+						<img class="proj-img" ng-src="{{projects[2].imgs[0].path}}">
+					</div>				
+					<video loop autoplay class="proj-vid" ng-if="projects[2].vids!==undefined"> 
+						<source ng-src="{{projects[2].vids[0].path}}">
+					</video>	
+<!-- 					<div class="proj-title">{{projects[2].name}}</div>						
+ -->				</div>
+
+				<div class="grid-item fitbit">
+					<div class="scrim"></div>
+					<div class="proj-img-box" ng-if="projects[5].vids===undefined">
+						<img class="proj-img" ng-src="{{projects[5].imgs[0].path}}">
+					</div>				
+					<video loop autoplay class="proj-vid" ng-if="projects[5].vids!==undefined"> 
+						<source ng-src="{{projects[5].vids[0].path}}">
+					</video>	
+<!-- 					<div class="proj-title">{{projects[3].name}}</div>						
+ -->				</div>	
+
+				<div class="grid-item graphic">
+					<div class="scrim"></div>
+					<div class="proj-img-box" ng-if="projects[4].vids===undefined">
+						<img class="proj-img" ng-src="{{projects[4].imgs[0].path}}">
+					</div>				
+					<video loop autoplay class="proj-vid" ng-if="projects[4].vids!==undefined"> 
+						<source ng-src="{{projects[4].vids[0].path}}">
+					</video>	
+<!-- 					<div class="proj-title">{{projects[4].name}}</div>						
+ -->				</div>								
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+</html>

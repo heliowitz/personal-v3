@@ -1,0 +1,88 @@
+<md-dialog id="proj-box">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools" id="proj-box-header-bar">
+        <h2>{{data.name}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="assets/icons/ic_close_24px.svg" aria-label="Close dialog" id="closeIcon"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="proj-header-img" ng-style="{'background-image': 'url(' + data.imgs[0].path + ')'}"></div>
+
+      <div class="proj-info-box">
+        <div class="proj-info-part-box">
+          <div class="proj-info-part-icon">
+            <img class="icon" src="./assets/icons/about.svg">
+          </div>
+          <div class="proj-info-part-text">{{data.about}}</div>
+        </div>
+
+        <div class="proj-info-part-box" style="margin-bottom: 0px;">
+          <div class="proj-info-part-icon">
+            <img class="icon" src="./assets/icons/stack.svg">
+          </div>
+          <div class="proj-info-part-text">{{data.stack}}</div>
+        </div>
+      </div>
+
+      <div class="proj-detail-box">
+        <div class="proj-context-box detail-box">
+          <div class="proj-detail-header">About</div>
+          <div class="proj-context-text">{{data.context}}</div>
+        </div>  
+
+        <div class="other-img"></div>
+
+        <div class="proj-contributions-box detail-box">
+          <div class="proj-detail-header">Contributions</div>
+            <div class="work-roles-list">
+              <div class="work-roles-item-box" ng-repeat="point in data.contributions">
+                <div class="work-roles-item-bullet">
+                  <img class="icon" src="./assets/icons/bullet.svg">
+                </div>
+                <div class="work-roles-item-text">{{point}}</div>
+              </div>
+                                      
+            </div>
+        </div>
+
+        <div class="proj-notes-box detail-box">
+          <div class="proj-detail-header">Notes</div>
+            <div class="work-roles-list">
+              <div class="work-roles-item-box" ng-repeat="point in data.notes">
+                <div class="work-roles-item-bullet">
+                  <img class="icon" src="./assets/icons/bullet.svg">
+                </div>
+                <div class="work-roles-item-text">{{point}}</div>
+              </div>                                         
+            </div>          
+        </div>
+
+        <div class="proj-imgs-box detail-box">
+          <div class="proj-detail-header">Screenshots</div>
+            <div class="img-box" ng-repeat="path in data.imgs">
+              <div class="proj-screenshot-box">
+                <div class="proj-screenshot" ng-style="{'background-image': 'url(' + path.path + ')'}"></div>
+              </div>
+              <div class="img-caption">{{path.caption}}</div>
+            </div>
+        </div>
+
+      </div>
+    </md-dialog-content>
+
+
+    <md-dialog-actions layout="row">
+      <div ng-repeat="link in data.links">
+        <md-button ng-href="{{link.linkurl}}" target="_blank" md-autofocus>
+          {{link.source}}
+        </md-button>        
+      </div>
+    </md-dialog-actions>
+
+  </form>
+</md-dialog>
